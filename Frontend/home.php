@@ -1,5 +1,6 @@
 <?php 
 include 'Components/index.php';
+include 'Components/new.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +13,24 @@ include 'Components/index.php';
 <body class="vh-100"> 
     <div class="h-100 d-flex flex-column justify-content-between">
         <?php
-        $header = new HeaderPage();
-        $header->render();
-        $footer = new Footer();
-        $footer->render();
+            $header = new HeaderPage();
+            $header->render();
+        ?>
+
+        <div class="container h-100 d-flex flex-column justify-content-center aling-content-center">
+            <div class="row">
+                <div class="col-12">
+                    <?php 
+                        $data  = new News();
+                        $data->render();    
+                    ?>
+                </div>
+            </div>    
+        </div>
+
+        <?php
+            $footer = new Footer();
+            $footer->render();
         ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
